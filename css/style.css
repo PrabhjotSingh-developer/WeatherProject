@@ -1,0 +1,244 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mwrriweather Sans',sans-serif;
+}
+:root{
+    --colorDark1:#11204E;
+    --colorDark2:#3F72AF;
+    --colorLight1:#DBE2EF;
+    --colorLight2:#F9F7F7;
+}
+.flex{
+    display: flex;
+    align-items: center;
+}
+.wrapper{
+    width: 100%;
+    
+    color: var(--colorLight2);
+    background-image:linear-gradient(160deg,#112d4e 0%,#3f72af 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-block:2rem ;
+}
+.wrapper h1{
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 20px;
+}
+.tab-container{
+    width: 90%;
+    max-width: 550px;
+    margin-inline: auto;
+    justify-content: space-between;
+}
+.tab-container button{
+    cursor: pointer;
+    font-size: 0.875rem;
+    letter-spacing: 1.75px;
+    padding: 0.4rem .5rem;
+    color: white;
+    background-color: transparent;
+    border: none;
+}
+
+.tab.current-tab{
+    background-color: rgba(219,226,239,0.5)!important;
+    border-radius: 4px;
+}
+.weatherContainer{
+    flex-direction: column;
+    justify-content: center;
+    margin-block: 4rem;
+    margin-inline: auto;
+    width: 100%;
+}
+.btn{
+    font-size: .85rem;
+    text-transform: uppercase;
+    border-radius: 5px;
+    background-color: var(--colorDark2);
+    cursor: pointer;
+    padding: 0.6rem 1.80rem;
+    color: var(--colorLight2);
+    border: none;
+}
+.grant-location-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: .9rem;
+    padding-bottom: 1rem;
+    display: none;
+
+}
+.grant-location-container.active{
+    display: flex;
+    flex-direction: column;
+
+}
+.grant-location-container p:first-of-type{
+    font-size: 1.75rem;
+    font-weight: 600;
+
+}
+.grant-location-container p:last-of-type{
+    font-size: .85rem;
+    font-weight: 500;
+}
+
+.loading-container{
+   flex-direction: column;
+   justify-content: center ;
+   display: none;
+}
+.loading-container.active{
+    display: flex;
+}
+.user-info-container{
+ width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.user-info-container.active{
+    display: flex;
+   
+}
+.user-info-container .name{
+    gap: 0 0.5rem;
+}
+.name p{
+    font-size: 2rem;
+}
+.name img{
+    width: 30px;
+    height: 30px;
+}
+.user-info-container > p{
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+.user-info-container >img{
+    width: 90px;
+    height: 90px;
+}
+.user-info-container p[data-temp]
+{
+    font-size: 2.75rem;
+    font-weight: 700;
+}
+.parameter-container{
+    margin-top: 2rem;
+    justify-content: center;
+    gap: 1rem 1.5rem;
+    width: 90%;
+    flex-wrap: wrap;
+}
+.parameter{
+    width: 30%;
+    max-width: 200px;
+    background-color: rgba(219,226,239,0.5);
+    border-radius: 5px;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    
+    gap:5px 1rem;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.parameter img{
+    width: 50px;
+    height: 50px;
+}
+.parameter p:first-of-type{
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.parameter p:last-child{
+    font-size: 1rem;
+    font-weight: 200;
+}
+
+/* Search form conatiner */
+.form-container{
+    width: 90%;
+    max-width: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-inline:auto;
+    gap: 0 0.8rem;
+    margin-bottom: 2rem;
+    display: none;
+}
+.form-container input{
+    all:unset;
+    width: calc(100% - 80px);
+    height: 40px;
+    padding: 0 1.5rem;
+    background-color: rgba(219,226,239,0.5);
+    border-radius: 10px;
+
+}
+.form-container input::placeholder{
+color: rgba(219,226,239,0.7);
+
+}
+.form-container input:focus{
+    outline: 3px solid rgba(219,226,239,0.7);
+}
+.form-container .btn1{
+    all: unset;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: var(--colorDark2);
+    cursor: pointer;
+    color: var(--colorLight2);
+    border: none;
+    
+}
+.form-container.active{
+    /* scale: 1;
+    opacity: 1; */
+    display: flex;
+}
+/* Error images */
+.notfound img{
+    width: 70%;
+    margin: auto;
+    display: none;
+}
+.notfoundimg.active{
+    display: block;
+}
+
+/* Media querries  */
+@media (max-width:768px)
+{
+     .parameter{
+        width: 40%;
+     }
+}
+@media (max-width:600px)
+{
+    .parameter-container{
+        gap: 2rem;
+    }
+     .parameter{
+        width: 90%;
+     }
+}
